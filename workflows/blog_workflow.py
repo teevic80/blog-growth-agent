@@ -11,13 +11,15 @@ def run_blog_workflow(config: dict):
     client = config["client"]
     industry = config["industry"]
     region = config["region"]
-    tone = config.get("tone", "Neutral")
+    tone = config["tone"]
 
     print("Running blog workflow...")
 
+    # Keyword agent + generation
     keyword_agent = get_keyword_agent(client, industry, region, tone)
     keywords = generate_keywords(keyword_agent, config, region)
 
+    # Competitor agent + report
     competitor_agent = get_competitor_agent(client, industry, region, tone)
     competitor_report = generate_competitor_report(competitor_agent, industry, region)
 
