@@ -1,32 +1,39 @@
 # blog-growth-agent
 
-An AI agent for automating blog content research and distribution workflows. Handles keyword research, content ideation, and publishing pipeline tasks.
+A multi-agent AI system for automating blog content research and creation. Runs parallel agents for keyword research, competitor analysis, and content writing — orchestrated into a single publishing workflow.
 
 ## Tech Stack
 
-- **TypeScript**
+- **Python**
 - **Claude / OpenAI** — LLM backbone for content generation and analysis
-- **Node.js**
 
 ## Structure
 
 ```
-├── functions/       # Core agent functions (keyword research, etc.)
-├── scripts/         # Standalone test and utility scripts
-├── types/           # Shared TypeScript types
+├── agents/
+│   ├── keyword_agent.py      # Keyword research and opportunity analysis
+│   ├── competitor_agent.py   # Competitor content analysis
+│   └── writer_agent.py       # AI-powered content generation
+├── tools/
+│   └── search_tool.py        # Web search integration
+├── workflows/
+│   └── blog_workflow.py      # End-to-end orchestration
+├── functions/                # Shared utilities
+├── data/                     # Inputs and outputs
+└── main.py                   # Entry point
 ```
 
 ## Getting Started
 
 ```bash
 # Install dependencies
-npm install
+pip install -r requirements.txt
 
 # Add environment variables
 cp .env.example .env
 
-# Run a script
-npx ts-node scripts/test_keyword.ts
+# Run the workflow
+python main.py
 ```
 
 ## Environment Variables
