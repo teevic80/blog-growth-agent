@@ -1,10 +1,20 @@
-# Ignore virtual envs
+# Virtual envs
 venv/
 venv311/
 
-# Ignore Python cache
+# Python cache
 __pycache__/
 *.pyc
 
 # Environment variables
 .env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+dist/
+*.log
+
+# macOS
+.DS_Store
